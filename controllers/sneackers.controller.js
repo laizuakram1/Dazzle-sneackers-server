@@ -12,6 +12,7 @@ const sneackersCollection = client.db('dazzleSneackers').collection('sneackers')
 const bestSellerCollection = client.db('dazzleSneackers').collection('bestSeller');
 const teamMemberCollection = client.db('dazzleSneackers').collection('OurTeam');
 const blogsCollection = client.db('dazzleSneackers').collection('latestBlog');
+const relatedProductsCollection = client.db('dazzleSneackers').collection('relatedProducts');
 
 
 
@@ -43,7 +44,9 @@ module.exports.getLatestBlog = async(req, res) =>{
 
     res.send(blogs)
 }
+module.exports.getRelatedProducts = async(req, res) =>{
+    const products = await relatedProductsCollection.find({}).toArray();
 
-module.exports.postSneackers = (req, res) =>{
-    res.send('post sneackers')
+    res.send(products);
 }
+

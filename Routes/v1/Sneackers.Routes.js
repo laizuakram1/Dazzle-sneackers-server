@@ -40,8 +40,14 @@ router
 .get(sneackersController.getTeamMember)
 
 router.route('/blogs')
+/**
+ * get latest blogs
+ * need access to token on the request header
+ *
+ */
 .get(sneackersController.getLatestBlog)
-
+router.route('/related')
+.get(sneackersController.getRelatedProducts)
 module.exports = router;
 
 
