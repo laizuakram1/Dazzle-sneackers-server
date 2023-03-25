@@ -5,6 +5,7 @@ const cors = require('cors');
 const SneackersRouter = require('./Routes/v1/Sneackers.Routes');
 const port = process.env.PORT || 5000;
 
+
 // middleware
 app.use(cors());
 app.use(express.json());
